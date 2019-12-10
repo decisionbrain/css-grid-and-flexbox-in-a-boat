@@ -12,8 +12,7 @@
   position: relative;
 }
 
-div.wave {
-  background: repeat-x url('/assets/home/wave.svg');
+.wave {
   animation: wave 5s infinite linear;
 
   width: 1400px;
