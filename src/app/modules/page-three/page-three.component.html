@@ -1,0 +1,58 @@
+<div class="panel-with-details">
+    <div class="content">
+        <h2>Grid fixed</h2>
+
+        <div class="grid-fixed boat-container">
+            <div></div>
+            <div class="sail left"></div>
+            <div class="mast color-brown"></div>
+            <div class="sail right"></div>
+            <div></div>
+
+            <div class="hull left"></div>
+            <div class="hull"></div>
+            <div class="hull"></div>
+            <div class="hull"></div>
+            <div class="hull right"></div>
+        </div>
+    </div>
+
+    <markdown class="content" ngPreserveWhitespaces>
+        **Fixed size contraints is very easy do define**
+
+        ```css
+        .two-line-grid-template {{ '{' }}
+            display: grid;
+            grid-template-rows: 400px 150px;
+            grid-template-columns:
+                150px 300px 16px 300px 150px;
+        }
+        .one-line-grid-template {{ '{' }}
+            display: grid;
+            grid-template:
+                400px 150px /
+                150px 300px 16px 300px 150px;
+        }
+        ```
+
+        **The content can be aligned**
+
+        ```css
+        .sail.left {{ '{' }}
+            justify-self: end;
+        }
+        ```
+
+        **And there are goodies too**
+
+        ```css
+        .center-old-school {{ '{' }}
+            align-self: center;
+            justify-self: center;
+        }
+        .center {{ '{' }}
+            place-self: center;
+        }
+        ```
+    </markdown>
+</div>

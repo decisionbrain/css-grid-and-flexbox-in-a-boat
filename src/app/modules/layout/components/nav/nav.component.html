@@ -1,0 +1,25 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <h1 class="navbar-item" routerLink="/home">
+            <img src="assets/layout/flexbox.png"> & <img src="assets/layout/cssgrid.png"> are in a <img src="favicon.ico">
+            <!-- <div class="navbar-item">{{ currentRoute }}</div> -->
+        </h1>
+    </div>
+
+    <div class="navbar-menu">
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <button
+                    [disabled]="isFirst"
+                    (click)="onPrevious()"
+                    class="button">Previous</button>
+            </div>
+            <div class="navbar-item">
+                <button
+                    [disabled]="isLast"
+                    (click)="onNext()"
+                    class="button">Next</button>
+            </div>
+        </div>
+    </div>
+</nav>

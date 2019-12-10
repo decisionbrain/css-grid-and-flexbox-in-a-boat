@@ -1,0 +1,52 @@
+
+
+
+@mixin triangleBase() {
+    display : inline-block;
+    box-sizing: border-box;
+    height : 0;
+    width : 0;
+    border: 0;
+
+    background-color: transparent;
+    border-color: transparent;
+    border-style: solid;
+  }
+
+  @mixin triangleTopRight($height: 150px, $width: 150px, $color: black) {
+
+    @include triangleBase();
+
+    border-top-color: $color;
+    border-top-width: $height;
+    border-left-width: $width;
+  }
+
+  @mixin triangleTopLeft($height: 150px, $width: 150px, $color: black) {
+
+    @include triangleBase();
+
+    border-top-color: $color;
+    border-top-width: $height;
+    border-right-width: $width;
+  }
+
+  @mixin triangleBottomRight($height: 150px, $width: 150px, $color: black) {
+
+    @include triangleBase();
+
+    border-bottom-color: $color;
+    border-bottom-width: $height;
+    border-left-width: $width;
+  }
+
+
+
+  @mixin triangleBottomLeft($height: 150px, $width: 150px, $color: black) {
+
+    @include triangleBase();
+
+    border-bottom-color: $color;
+    border-bottom-width: $height;
+    border-right-width: $width;
+  }

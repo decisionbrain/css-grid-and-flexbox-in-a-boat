@@ -1,0 +1,75 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.grid-fixed-area.boat-container {
+
+  // Coloring
+  .mast, .hull {
+    background-color: $colorHull;
+  }
+    // define some sizes
+    width: 150px + 300px + 16px + 300px + 150px;
+
+    // grid config
+    display: grid;
+    grid-template:
+      400px 150px /
+      150px 300px 16px 300px 150px;
+    grid-template-areas:
+        '......... sail-left mast sail-right ..........'
+        'hull-left hull      hull hull       hull-right';
+
+    .sail.left {
+      grid-area: sail-left;
+
+      justify-self: end;
+      margin: .5em .5em 0 0;
+
+      @include triangleBottomRight(
+        $color: $colorSail,
+        $height: 320px,
+        $width: 250px
+      )
+    }
+
+    .mast {
+      grid-area: mast;
+    }
+
+    .sail.right {
+      grid-area: sail-right;
+
+      justify-self: start;
+      margin: .5em 0 0 .5em;
+
+      @include triangleBottomLeft(
+        $color: $colorSail,
+        $height: 320px,
+        $width: 150px
+      )
+    }
+
+    .hull {
+      grid-area: hull;
+    }
+
+    .hull.left {
+      grid-area: hull-left;
+
+      @include triangleTopRight(
+        $color: $colorHull,
+        $height: 150px,
+        $width: 150px
+      );
+    }
+
+    .hull.right {
+      grid-area: hull-right;
+
+      @include triangleTopLeft(
+        $color: $colorHull,
+        $height: 150px,
+        $width: 150px
+      )
+    }
+}

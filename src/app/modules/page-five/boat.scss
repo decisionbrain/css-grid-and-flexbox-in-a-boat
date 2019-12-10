@@ -1,0 +1,60 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.grid-auto.boat-container {
+    display: grid;
+    grid-template-columns: auto 1fr auto 1fr auto;
+
+    .mast {
+      height: 400px;
+      width: 1em;
+
+      background-color: $colorHull;
+    }
+
+    .sail {
+      $heightSail: 320px;
+      margin-top: .5em;
+
+      &.left {
+        @include triangleBottomRight(
+          $color: $colorSail,
+          $height: $heightSail,
+          $width: 300px
+        );
+        justify-self: end;
+        margin-right: .5em;
+      }
+
+      &.right {
+        @include triangleBottomLeft(
+          $color: $colorSail,
+          $height: $heightSail,
+          $width: 220px
+        );
+        margin-left: .5em;
+      }
+    }
+
+    .hull {
+      $sizeTriangle: 150px;
+
+      background-color: $colorHull;
+
+      &.left {
+        @include triangleTopRight(
+          $color: $colorHull,
+          $height: $sizeTriangle,
+          $width: $sizeTriangle
+        );
+      }
+
+      &.right {
+        @include triangleTopLeft(
+          $color: $colorHull,
+          $height: $sizeTriangle,
+          $width: $sizeTriangle
+        );
+      }
+    }
+  }
